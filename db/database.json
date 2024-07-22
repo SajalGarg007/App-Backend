@@ -1,0 +1,30 @@
+{
+  "defaultEnv": "init",
+  "init": {
+    "driver": "pg",
+    "user": {"ENV": "DB_DEV_USER"},
+    "password": {"ENV": "DB_DEV_PASS"},
+    "host": {"ENV": "DB_DEV_HOST"},
+    "database":"postgres",
+    "schema": "public"
+  },
+  "dev": {
+    "driver": "pg",
+    "user": {"ENV": "DB_DEV_USER"},
+    "password": {"ENV": "DB_DEV_PASS"},
+    "host": {"ENV": "DB_DEV_HOST"},
+    "database": {"ENV": "DB_DEV_BASE"},
+    "schema": "public"
+  },
+  "test": {
+    "driver": "pg",
+    "user": {"ENV": "DB_TST_USER"},
+    "password": {"ENV": "DB_TST_PASS"},
+    "host": {"ENV": "DB_TST_HOST"},
+    "database": {"ENV": "DB_TST_BASE"},
+    "schema": "public"
+  },
+
+  "sql-file" : true,
+  "non-transactional" : true
+}
