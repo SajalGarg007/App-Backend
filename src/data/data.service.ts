@@ -1,6 +1,6 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import readXlsxFile from 'read-excel-file/node';
-import { Op, where } from 'sequelize';
+import { Op, } from 'sequelize';
 import { CostCenter } from 'src/users/entity/CostCenter';
 import { Designation } from 'src/users/entity/Designation';
 import { Employee } from 'src/users/entity/Employee';
@@ -208,9 +208,6 @@ export class DataService {
             console.log(row[12]); // Employee Id
             console.log(row[15]); // Reporting Manager
             console.log(row[16]); // Location
-            //.setReportingMan(`${row[15]}`)
-            //.setCostCenterId(costCenter.id)
-            //.setCostCentre(`${row[10]}`)
             const employee = new Employee().setEmpId(`${row[12]}`).setFirstName(`${row[7]}`).setLastName(`${row[8]}`)
             .setVendorId(vender.id).setFunctionalHeadId(functionalHead.id).setSubTeamId(subTeam.id).setGender(`${row[9]}`).setWorkMode(`${row[6]}`).setEmployementType(`${row[4]}`)
             .setJobLocation(`${row[16]}`).setJobLevel(`${row[13]}`)

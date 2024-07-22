@@ -1,7 +1,4 @@
 export class AddEmployeeRequest {
-    // NotAvailable=0,
-    // Booked=1,
-    // Available=2
     public BSC_employee_Id: string;
     public first_name: string;
     public last_name: string;

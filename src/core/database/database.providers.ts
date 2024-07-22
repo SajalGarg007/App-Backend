@@ -22,7 +22,6 @@ export const databaseProviders = [
             logging: false
          } as any);
          console.log(sequelize.config)
-         //
          sequelize.addModels([Team, SubTeam,CostCenter,  Vendor, Designation, Employee, FunctionalHead]);
          await sequelize.sync();
          return sequelize;
