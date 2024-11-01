@@ -11,16 +11,19 @@ export const databaseProviders = [
    {
       provide: Sequelize,
       useFactory: async () => {
-         console.log(process.env.NODE_ENV);
+         console.log("consoling env variables");
+         console.log(process.env.DB_USER);
          const sequelize = new Sequelize({  // TODO see why its not working
             username: 'postgres',
             password: '13mayg**',
             database: 'bostontrial2',
-            host: 'localhost',
+            //localhost
+            host: 'host.docker.internal',
             port: '5432',
             dialect: 'postgres',
             logging: false
          } as any);
+         console.log("consoling sequelize config");
          console.log(sequelize.config)
          sequelize.addModels([Team, SubTeam,CostCenter,  Vendor, Designation, Employee, FunctionalHead]);
          await sequelize.sync();

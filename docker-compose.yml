@@ -1,8 +1,15 @@
-version: '3.2'
+version: '3.8'
 services:
-  seat-booking-poc:
-    build:
-      context: .
-      dockerfile: 'Dockerfile'
+  backend:
+    image: "backend22"
+    container_name: backend
     ports:
       - '3001:3001'
+# version: '3.2'
+# services:
+#   seat-booking-poc:
+#     build:
+#       context: .
+#       dockerfile: 'Dockerfile'
+#     ports:
+#       - '3001:3001'
